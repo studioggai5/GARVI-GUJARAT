@@ -1,0 +1,6 @@
+{
+  "name": "Garvi Gujarat AI Studio",
+  "description": "AI-Powered Entertainment & Creative Production Studio - Where Indian Stories Meet the Future of Cinema.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
