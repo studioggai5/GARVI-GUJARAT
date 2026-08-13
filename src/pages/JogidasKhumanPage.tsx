@@ -68,20 +68,20 @@ export const JogidasKhumanPage: React.FC<JogidasKhumanPageProps> = ({ onNavigate
 
       {/* 2. FILM INTRODUCTION & STORY */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-[#d4af37]/40 bg-[#121318]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-7 relative rounded-2xl overflow-hidden border border-[#d4af37]/40 bg-black/90 p-4 sm:p-6 flex items-center justify-center">
             <img
               src={filmData.defaultPosterUrl}
               alt="Jogidas Khuman Poster"
               referrerPolicy="no-referrer"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto max-h-[600px] object-contain rounded-xl border border-[#d4af37]/30 shadow-2xl"
             />
             <div className="absolute bottom-3 left-3 bg-black/80 px-3 py-1 rounded border border-[#d4af37]/30 text-[10px] text-[#d4af37] font-mono">
               FILM_PROJECT_IMAGE_PLACEHOLDER
             </div>
           </div>
 
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-5 space-y-6">
             <span className="text-xs font-bold tracking-[0.2em] text-[#d4af37] uppercase">
               THE LEGEND
             </span>

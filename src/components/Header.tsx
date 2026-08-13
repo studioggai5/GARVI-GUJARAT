@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Play, Menu, X, ChevronRight, Film, Sparkles } from 'lucide-react';
 import { PageId } from '../types';
 import { STUDIO_CONFIG } from '../data/studioConfig';
+import { MEDIA_ASSETS } from '../data/mediaAssets';
 
 interface HeaderProps {
   currentPage: PageId;
@@ -53,17 +54,20 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onOpenT
           onClick={() => handleNavClick('home')}
           className="flex items-center space-x-3 text-left group focus:outline-none"
         >
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#d4af37] via-[#aa7c11] to-[#1a1713] p-[1px] flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
-            <div className="w-full h-full bg-[#0a0b0d] rounded-[7px] flex items-center justify-center">
-              <Film className="w-5 h-5 text-[#d4af37]" />
-            </div>
+          <div className="w-11 h-11 rounded-lg bg-[#050505] border border-[#d4af37]/40 p-0.5 shadow-[0_0_15px_rgba(212,175,55,0.2)] group-hover:border-[#d4af37] group-hover:scale-105 transition-all duration-300 overflow-hidden flex items-center justify-center shrink-0">
+            <img
+              src={MEDIA_ASSETS.STUDIO_LOGO?.currentUrl || '/src/assets/images/studio_logo_1786540872261.jpg'}
+              alt="Garvi Gujarat AI Studio Official Logo"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover rounded-md"
+            />
           </div>
           <div>
-            <span className="block font-cinzel font-bold text-base sm:text-lg tracking-wider text-white group-hover:text-[#d4af37] transition-colors">
+            <span className="block font-cinzel font-bold text-[15px] sm:text-[18px] tracking-[0.2em] text-[#d4af37] group-hover:text-white transition-colors">
               GARVI GUJARAT
             </span>
-            <span className="block text-[10px] sm:text-xs tracking-[0.2em] font-medium text-[#d4af37]">
-              AI STUDIO
+            <span className="block text-[10px] tracking-[0.4em] font-medium text-[#f5f5f0]/70 uppercase">
+              AI STUDIOS
             </span>
           </div>
         </button>

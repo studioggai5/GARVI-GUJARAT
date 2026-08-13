@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageId } from '../types';
 import { STUDIO_CONFIG } from '../data/studioConfig';
+import { MEDIA_ASSETS } from '../data/mediaAssets';
 import { Film, Youtube, Instagram, Facebook, Linkedin, ArrowUpRight } from 'lucide-react';
 
 interface FooterProps {
@@ -25,15 +26,20 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenLegal }) => {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-lg bg-[#d4af37]/10 border border-[#d4af37]/30 flex items-center justify-center">
-                <Film className="w-5 h-5 text-[#d4af37]" />
+              <div className="w-12 h-12 rounded-lg bg-[#050505] border border-[#d4af37]/40 p-0.5 shadow-[0_0_15px_rgba(212,175,55,0.2)] overflow-hidden flex items-center justify-center shrink-0">
+                <img
+                  src={MEDIA_ASSETS.STUDIO_LOGO?.currentUrl || '/src/assets/images/studio_logo_1786540872261.jpg'}
+                  alt="Garvi Gujarat AI Studios Logo"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover rounded-md"
+                />
               </div>
               <div>
                 <h3 className="font-cinzel font-bold text-lg text-white tracking-wider">
-                  GARVI GUJARAT AI STUDIO
+                  GARVI GUJARAT AI STUDIOS
                 </h3>
-                <p className="text-[10px] tracking-[0.2em] text-[#d4af37] font-semibold">
-                  AI-POWERED ENTERTAINMENT STUDIO
+                <p className="text-[10px] tracking-[0.25em] text-[#d4af37] font-semibold uppercase">
+                  AI STUDIOS — WHERE GUJARAT'S HISTORY MEETS THE FUTURE OF CINEMA
                 </p>
               </div>
             </div>

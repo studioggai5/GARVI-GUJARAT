@@ -207,22 +207,21 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenTrailer })
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl overflow-hidden border border-[#d4af37]/40 bg-[#0e0f14] shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-12">
-              {/* Poster Column */}
-              <div className="lg:col-span-5 relative min-h-[420px] lg:min-h-full">
+              {/* Poster Column - Enlarged for dominant image display */}
+              <div className="lg:col-span-7 relative min-h-[320px] lg:min-h-full flex items-center justify-center bg-black/90 p-4 sm:p-8 border-b lg:border-b-0 lg:border-r border-[#d4af37]/20">
                 <img
                   src={filmProjectImage.currentUrl}
                   alt="Jogidas Khuman poster"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto max-h-[600px] object-contain rounded-xl border border-[#d4af37]/40 shadow-2xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0e0f14] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#0e0f14]" />
-                <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#d4af37]/40 text-[10px] font-bold text-[#d4af37] tracking-widest uppercase">
+                <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#d4af37]/40 text-[10px] font-bold text-[#d4af37] tracking-widest uppercase z-10">
                   ORIGINAL FEATURE FILM
                 </div>
               </div>
 
-              {/* Text Column */}
-              <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-center space-y-6">
+              {/* Text Column - Compact layout */}
+              <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-center space-y-5">
                 <div className="space-y-2">
                   <span className="text-xs font-extrabold tracking-[0.2em] text-[#d4af37] uppercase">
                     OUR FIRST ORIGINAL FILM
@@ -412,13 +411,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenTrailer })
                   onClick={() => onNavigate('projects')}
                   className="cursor-pointer group relative rounded-xl overflow-hidden border border-[#23201a] hover:border-[#d4af37] transition-all bg-[#121318]"
                 >
-                  <img
-                    src={proj.defaultPosterUrl}
-                    alt={proj.title}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                  <div className="relative aspect-video bg-black overflow-hidden flex items-center justify-center p-1">
+                    <img
+                      src={proj.defaultPosterUrl}
+                      alt={proj.title}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70 pointer-events-none" />
+                  </div>
                   <div className="absolute bottom-3 left-3 right-3">
                     <span className="text-[9px] font-bold text-[#d4af37] uppercase tracking-wider block">
                       {proj.status}

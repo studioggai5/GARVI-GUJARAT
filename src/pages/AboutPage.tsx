@@ -137,19 +137,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#121318] rounded-2xl border border-[#d4af37]/30 p-8 sm:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-4 relative">
+              <div className="lg:col-span-6 xl:col-span-7 relative flex justify-center items-center bg-black/40 p-4 rounded-xl border border-[#23201a]">
                 <img
                   src={founderImage.currentUrl}
                   alt={STUDIO_CONFIG.founderName}
                   referrerPolicy="no-referrer"
-                  className="w-full h-80 object-cover rounded-xl border border-[#23201a]"
+                  className="w-full h-auto max-h-[600px] object-contain rounded-xl border border-[#d4af37]/40 shadow-xl shadow-black/50"
                 />
-                <div className="absolute bottom-3 left-3 bg-black/80 px-3 py-1 rounded border border-[#d4af37]/30 text-[10px] text-[#d4af37] font-mono">
+                <div className="absolute bottom-6 left-6 bg-black/80 px-3 py-1 rounded border border-[#d4af37]/30 text-[10px] text-[#d4af37] font-mono">
                   {STUDIO_CONFIG.founderBioPlaceholder}
                 </div>
               </div>
 
-              <div className="lg:col-span-8 space-y-4">
+              <div className="lg:col-span-6 xl:col-span-5 space-y-4">
                 <span className="text-xs font-bold tracking-[0.2em] text-[#d4af37] uppercase">
                   LEADERSHIP & VISION
                 </span>

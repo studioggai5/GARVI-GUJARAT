@@ -14,6 +14,14 @@ export interface MediaAsset {
 }
 
 export const MEDIA_ASSETS: Record<string, MediaAsset> = {
+  STUDIO_LOGO: {
+    id: 'STUDIO_LOGO',
+    label: 'Garvi Gujarat AI Studios Official Emblem Logo',
+    replacementPath: '/assets/studio-logo.jpg',
+    currentUrl: '/src/assets/images/studio_logo_1786540872261.jpg',
+    description: 'Official 3D metallic lion & Gujarat map studio logo',
+    type: 'image'
+  },
   HERO_VIDEO_PLACEHOLDER: {
     id: 'HERO_VIDEO_PLACEHOLDER',
     label: 'Hero Background Video Placeholder',
@@ -42,8 +50,8 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'FILM_PROJECT_IMAGE_PLACEHOLDER',
     label: 'Jogidas Khuman Key Visual Banner',
     replacementPath: '/assets/jogidas-poster.jpg',
-    currentUrl: '/src/assets/images/jogidas_poster_1786461136092.jpg',
-    description: 'Movie banner visual for Jogidas Khuman film',
+    currentUrl: '/src/assets/images/jogidas.png',
+    description: 'Official movie banner visual for Jogidas Khuman film - The Legendary Baharvatiya of Sorath',
     type: 'image'
   },
   FILM_TRAILER_PLACEHOLDER: {
@@ -66,7 +74,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'FOUNDER_IMAGE_PLACEHOLDER',
     label: 'Jayraj Solanki - Founder & Producer Portrait',
     replacementPath: '/assets/studio-images/jayraj-solanki.jpg',
-    currentUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop',
+    currentUrl: '/src/assets/images/jayraj.png',
     description: 'Producer portrait visual for Jayraj Solanki',
     type: 'image'
   },

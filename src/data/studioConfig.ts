@@ -104,7 +104,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description: 'A legendary story from the land of Saurashtra. A story of honour, rebellion, sacrifice and the struggle of a man who became a legend. Jogidas Khuman marks the beginning of our ambitious historical storytelling universe — bringing the legendary Baharvatiya stories of Sorath to a new generation through cinematic AI-powered filmmaking.',
     longDescription: 'Set against the rugged, majestic terrains of 19th-century Sorath (Saurashtra), Jogidas Khuman tells the epic saga of a warrior who stood against tyranny with unyielding honor. Driven out of his ancestral land, Jogidas chose the righteous path of Baharvatiya — outlawry governed by chivalry, courage, and protective devotion to the helpless. Through state-of-the-art AI-assisted worldbuilding and authentic historical research, Garvi Gujarat AI Studio breathes monumental visual scale into this cherished folk hero of Gujarat.',
     posterPlaceholderId: 'FILM_PROJECT_IMAGE_PLACEHOLDER',
-    defaultPosterUrl: '/src/assets/images/jogidas_poster_1786461136092.jpg',
+    defaultPosterUrl: '/src/assets/images/jogidas.png',
     trailerPlaceholderId: 'FILM_TRAILER_PLACEHOLDER',
     defaultTrailerVideoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-smoke-and-sparks-rising-in-the-dark-41584-large.mp4',
     historicalContext: 'Sorath (Saurashtra) was a land of independent chieftains, royal dynasties, and fierce honor codes. The Baharvatiya tradition was not banditry, but a noble armed resistance against unjust tax regimes and oppressive rulers, guided by sacred ethical principles.',

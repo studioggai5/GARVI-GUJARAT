@@ -37,20 +37,19 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate, onOpenTr
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#0e0f14] border border-[#d4af37]/50 rounded-2xl overflow-hidden shadow-2xl relative">
           <div className="grid grid-cols-1 lg:grid-cols-12">
-            <div className="lg:col-span-5 relative min-h-[380px] lg:min-h-[480px]">
+            <div className="lg:col-span-7 relative min-h-[320px] lg:min-h-full flex items-center justify-center bg-black/90 p-4 sm:p-8 border-b lg:border-b-0 lg:border-r border-[#d4af37]/20">
               <img
                 src={featuredProject.defaultPosterUrl}
                 alt={featuredProject.title}
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover"
+                className="w-full h-auto max-h-[600px] object-contain rounded-xl border border-[#d4af37]/40 shadow-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0e0f14] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#0e0f14]" />
-              <div className="absolute top-4 left-4 bg-black/80 px-3 py-1 rounded-full border border-[#d4af37]/40 text-[10px] font-bold text-[#d4af37] tracking-widest uppercase">
+              <div className="absolute top-4 left-4 bg-black/80 px-3 py-1 rounded-full border border-[#d4af37]/40 text-[10px] font-bold text-[#d4af37] tracking-widest uppercase z-10">
                 FEATURED ORIGINAL IP
               </div>
             </div>
 
-            <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-5">
               <div className="space-y-3">
                 <span className="text-xs font-bold tracking-widest text-[#d4af37] uppercase">
                   {featuredProject.universe}
@@ -133,15 +132,15 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate, onOpenTr
                 className="bg-[#0e0f14] border border-[#23201a] hover:border-[#d4af37]/60 rounded-xl overflow-hidden group flex flex-col justify-between transition-all duration-300"
               >
                 <div>
-                  {/* Poster Image */}
-                  <div className="relative aspect-[3/4] overflow-hidden bg-black">
+                  {/* Poster Image - Widescreen aspect-video format for 16:9 posters */}
+                  <div className="relative aspect-video overflow-hidden bg-black p-2 flex items-center justify-center">
                     <img
                       src={project.defaultPosterUrl}
                       alt={project.title}
                       referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0e0f14] via-transparent to-transparent opacity-80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0e0f14] via-transparent to-transparent opacity-60 pointer-events-none" />
 
                     <div className="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded text-[10px] font-bold text-[#d4af37] border border-[#d4af37]/30 tracking-widest uppercase">
                       {project.status}
