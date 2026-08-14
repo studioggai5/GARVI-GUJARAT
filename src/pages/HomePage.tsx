@@ -20,45 +20,42 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenTrailer })
     <div id="home-page" className="space-y-0">
       {/* 1. HERO SECTION */}
       <section id="hero-section" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Background Media Component (HERO_VIDEO_PLACEHOLDER with HERO_IMAGE_PLACEHOLDER fallback) */}
-        <div className="absolute inset-0 z-0 bg-black">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster={heroImage.currentUrl}
-            className="w-full h-full object-cover opacity-50 scale-105 transition-transform duration-1000"
-            src={heroVideo.currentUrl}
+        {/* Cinematic Hero Background Image with natural golden-hour brightness & clarity */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src={heroImage.currentUrl}
+            alt="Garvi Gujarat AI Studio - Cinematic Historical Landscape"
+            className="w-full h-full object-cover object-center scale-100 filter brightness-105 contrast-[1.03] saturate-[1.08] transition-transform duration-1000"
           />
-          {/* Subtle dark cinematic overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0b0d] via-[#0a0b0d]/60 to-[#0a0b0d]/80" />
-          <div className="absolute inset-0 vignette-overlay" />
+          {/* Subtle localized radial scrim behind center content for readability without darkening the fort or landscape */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(10,11,13,0.45)_0%,_rgba(10,11,13,0.15)_55%,_transparent_85%)]" />
+          {/* Gentle bottom transition to the next section */}
+          <div className="absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-[#0d0e12] via-[#0d0e12]/50 to-transparent" />
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 py-20 animate-fadeIn">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#121318]/80 border border-[#d4af37]/40 backdrop-blur-md">
+          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#121318]/85 border border-[#d4af37]/50 backdrop-blur-md shadow-lg shadow-black/40">
             <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse" />
             <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#d4af37] uppercase">
               CINEMATIC AI PRODUCTION STUDIO
             </span>
           </div>
 
-          <h1 className="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-wider leading-tight">
-            GARVI GUJARAT <span className="text-gold-gradient block sm:inline">AI STUDIO</span>
+          <h1 className="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-wider leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
+            GARVI GUJARAT <span className="text-gold-gradient block sm:inline drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">AI STUDIO</span>
           </h1>
 
           <div className="space-y-2 max-w-3xl mx-auto">
-            <p className="text-xs sm:text-base md:text-lg tracking-[0.25em] font-semibold text-[#d4af37] uppercase">
+            <p className="text-xs sm:text-base md:text-lg tracking-[0.25em] font-semibold text-[#fce080] uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
               {STUDIO_CONFIG.primaryTagline}
             </p>
-            <p className="font-cormorant italic text-xl sm:text-2xl md:text-3xl text-gray-200">
+            <p className="font-cormorant italic text-xl sm:text-2xl md:text-3xl text-amber-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
               “{STUDIO_CONFIG.secondaryTagline}”
             </p>
           </div>
 
-          <p className="text-xs sm:text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-xs sm:text-sm md:text-base text-gray-100 max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] bg-black/30 backdrop-blur-[2px] p-3 rounded-lg border border-white/5">
             We create films, series, visual experiences and original intellectual properties by combining cinematic storytelling with the power of Artificial Intelligence.
           </p>
 
@@ -66,7 +63,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenTrailer })
             <button
               id="hero-explore-work-btn"
               onClick={() => onNavigate('projects')}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-md bg-gradient-to-r from-[#d4af37] via-[#fce080] to-[#b8860b] text-black font-extrabold text-xs tracking-widest uppercase hover:brightness-110 transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)] flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-md bg-gradient-to-r from-[#d4af37] via-[#fce080] to-[#b8860b] text-black font-extrabold text-xs tracking-widest uppercase hover:brightness-110 transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.45)] flex items-center justify-center space-x-2"
             >
               <span>EXPLORE OUR WORK</span>
               <ArrowRight className="w-4 h-4" />
@@ -75,7 +72,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenTrailer })
             <button
               id="hero-watch-trailer-btn"
               onClick={onOpenTrailer}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-md border border-[#d4af37] bg-[#0a0b0d]/70 backdrop-blur-md text-[#d4af37] hover:bg-[#d4af37] hover:text-black font-extrabold text-xs tracking-widest uppercase transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-md border border-[#d4af37] bg-[#0a0b0d]/80 backdrop-blur-md text-[#d4af37] hover:bg-[#d4af37] hover:text-black font-extrabold text-xs tracking-widest uppercase transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl shadow-black/60"
             >
               <Play className="w-4 h-4 fill-current" />
               <span>WATCH JOGIDAS KHUMAN TRAILER</span>
