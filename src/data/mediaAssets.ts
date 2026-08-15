@@ -118,28 +118,36 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     description: 'Brand advertisement production setup',
     type: 'image'
   },
-  PROJECT_02_PLACEHOLDER: {
-    id: 'PROJECT_02_PLACEHOLDER',
-    label: 'Project 02 Poster Visual',
-    replacementPath: '/assets/projects/project-02.jpg',
+  PROJECT_KADU_MAKRANI_PLACEHOLDER: {
+    id: 'PROJECT_KADU_MAKRANI_PLACEHOLDER',
+    label: 'Kadu Makrani Project Visual',
+    replacementPath: '/assets/projects/kadu-makrani.jpg',
     currentUrl: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=800&auto=format&fit=crop',
-    description: 'Future project poster placeholder',
+    description: 'Kadu Makrani historical project visual',
     type: 'image'
   },
-  PROJECT_03_PLACEHOLDER: {
-    id: 'PROJECT_03_PLACEHOLDER',
-    label: 'Project 03 Poster Visual',
-    replacementPath: '/assets/projects/project-03.jpg',
+  PROJECT_KHAPRO_KHODIYO_PLACEHOLDER: {
+    id: 'PROJECT_KHAPRO_KHODIYO_PLACEHOLDER',
+    label: 'Khapro Khodiyo Project Visual',
+    replacementPath: '/assets/projects/khapro-khodiyo.jpg',
     currentUrl: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop',
-    description: 'Future project poster placeholder',
+    description: 'Khapro Khodiyo historical project visual',
     type: 'image'
   },
-  PROJECT_04_PLACEHOLDER: {
-    id: 'PROJECT_04_PLACEHOLDER',
-    label: 'Project 04 Poster Visual',
-    replacementPath: '/assets/projects/project-04.jpg',
+  PROJECT_RAM_VALO_PLACEHOLDER: {
+    id: 'PROJECT_RAM_VALO_PLACEHOLDER',
+    label: 'Ram Valo Project Visual',
+    replacementPath: '/assets/projects/ram-valo.jpg',
     currentUrl: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=800&auto=format&fit=crop',
-    description: 'Future project poster placeholder',
+    description: 'Ram Valo historical project visual',
+    type: 'image'
+  },
+  PROJECT_JODHA_MANEK_PLACEHOLDER: {
+    id: 'PROJECT_JODHA_MANEK_PLACEHOLDER',
+    label: 'Jodha Manek Project Visual',
+    replacementPath: '/assets/projects/jodha-manek.jpg',
+    currentUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
+    description: 'Jodha Manek historical project visual',
     type: 'image'
   }
 };

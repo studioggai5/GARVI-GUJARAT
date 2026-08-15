@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { PageId, ProjectItem } from '../types';
+import { PageId } from '../types';
 import { PROJECTS_DATA } from '../data/studioConfig';
-import { MEDIA_ASSETS } from '../data/mediaAssets';
-import { Play, Film, ArrowRight, Sparkles, Filter } from 'lucide-react';
+import { Play, ArrowRight, Filter } from 'lucide-react';
 
 interface ProjectsPageProps {
   onNavigate: (page: PageId) => void;
@@ -10,31 +9,40 @@ interface ProjectsPageProps {
 }
 
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate, onOpenTrailer }) => {
-  const [selectedStatus, setSelectedStatus] = useState<string>('ALL');
+  const [selectedFilter, setSelectedFilter] = useState<string>('ALL');
 
-  const filteredProjects = selectedStatus === 'ALL'
+  const filteredProjects = selectedFilter === 'ALL'
     ? PROJECTS_DATA
-    : PROJECTS_DATA.filter((p) => p.status === selectedStatus);
+    : selectedFilter === 'FEATURED'
+    ? PROJECTS_DATA.filter((p) => p.isFeatured)
+    : PROJECTS_DATA.filter((p) => p.status === selectedFilter);
 
   const featuredProject = PROJECTS_DATA.find((p) => p.isFeatured) || PROJECTS_DATA[0];
+  const upcomingProjects = PROJECTS_DATA.filter((p) => !p.isFeatured);
 
   return (
     <div id="projects-page" className="py-24 bg-[#0a0b0d] min-h-screen space-y-16">
       {/* Header */}
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 pt-12">
         <span className="text-xs font-bold tracking-[0.25em] text-[#d4af37] uppercase">
-          STUDIO SLATE & ORIGINAL IPS
+          OUR PROJECTS
         </span>
         <h1 className="font-cinzel text-3xl sm:text-5xl font-extrabold text-white tracking-wider">
           OUR CINEMATIC PROJECTS
         </h1>
-        <p className="text-xs sm:text-base text-gray-400 max-w-2xl mx-auto">
-          Explore our slate of original Indian entertainment IPs, historical feature films, web series, and concept universes.
+        <p className="text-xs sm:text-base text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          Explore the cinematic worlds being developed by Garvi Gujarat AI Studio, beginning with our flagship Baharvatiya story and expanding into a growing slate of historical stories inspired by Gujarat and Saurashtra.
         </p>
       </section>
 
       {/* Featured Original Film: Jogidas Khuman */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+        <div className="flex items-center space-x-2">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#d4af37] uppercase">
+            FEATURED PROJECT
+          </span>
+        </div>
+
         <div className="bg-[#0e0f14] border border-[#d4af37]/50 rounded-2xl overflow-hidden shadow-2xl relative">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-7 relative min-h-[320px] lg:min-h-full flex items-center justify-center bg-black/90 p-4 sm:p-8 border-b lg:border-b-0 lg:border-r border-[#d4af37]/20">
@@ -94,35 +102,38 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate, onOpenTr
         </div>
       </section>
 
-      {/* Filter Tabs */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Upcoming Historical Projects Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-[#1f2029]">
-          <div className="flex items-center space-x-2">
-            <Filter className="w-4 h-4 text-[#d4af37]" />
-            <span className="text-xs font-bold text-white tracking-widest uppercase">FILTER SLATE:</span>
+          <div className="space-y-1">
+            <span className="text-xs font-bold tracking-[0.2em] text-[#d4af37] uppercase block">
+              CINEMATIC SLATE
+            </span>
+            <h3 className="font-cinzel text-xl sm:text-2xl font-bold text-white">
+              UPCOMING HISTORICAL PROJECTS
+            </h3>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            {['ALL', 'Teaser Released', 'In Production', 'In Development', 'Concept Phase'].map((status) => (
+          <div className="flex flex-wrap items-center gap-2">
+            <Filter className="w-4 h-4 text-[#d4af37] hidden sm:inline-block mr-1" />
+            {['ALL', 'FEATURED', 'In Development'].map((filter) => (
               <button
-                key={status}
-                onClick={() => setSelectedStatus(status)}
+                key={filter}
+                onClick={() => setSelectedFilter(filter)}
                 className={`px-4 py-1.5 rounded-full text-xs font-bold tracking-wider transition-all ${
-                  selectedStatus === status
+                  selectedFilter === filter
                     ? 'bg-[#d4af37] text-black'
                     : 'bg-[#121318] text-gray-400 hover:text-white border border-[#23201a]'
                 }`}
               >
-                {status}
+                {filter}
               </button>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Projects Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredProjects.map((project) => {
             const isJogidas = project.id === 'jogidas-khuman';
 
@@ -132,7 +143,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate, onOpenTr
                 className="bg-[#0e0f14] border border-[#23201a] hover:border-[#d4af37]/60 rounded-xl overflow-hidden group flex flex-col justify-between transition-all duration-300"
               >
                 <div>
-                  {/* Poster Image - Widescreen aspect-video format for 16:9 posters */}
+                  {/* Poster Image */}
                   <div className="relative aspect-video overflow-hidden bg-black p-2 flex items-center justify-center">
                     <img
                       src={project.defaultPosterUrl}
@@ -150,7 +161,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate, onOpenTr
                       <span className="text-[10px] text-[#d4af37] font-semibold tracking-widest block uppercase">
                         {project.universe}
                       </span>
-                      <h3 className="font-cinzel font-bold text-lg text-white">
+                      <h3 className="font-cinzel font-bold text-base sm:text-lg text-white">
                         {project.title}
                       </h3>
                     </div>
@@ -158,12 +169,9 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate, onOpenTr
 
                   {/* Body Content */}
                   <div className="p-5 space-y-3">
-                    <p className="text-xs text-gray-400 line-clamp-3 leading-relaxed font-light">
+                    <p className="text-xs text-gray-300 leading-relaxed font-light">
                       {project.description}
                     </p>
-                    <div className="text-[11px] text-gray-500 font-mono">
-                      Poster Placeholder: <code className="text-[#d4af37]">{project.posterPlaceholderId}</code>
-                    </div>
                   </div>
                 </div>
 
@@ -179,7 +187,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate, onOpenTr
                     </button>
                   ) : (
                     <button
-                      onClick={() => onNavigate('contact')}
+                      onClick={() => onNavigate('collaborate')}
                       className="w-full py-2.5 rounded border border-[#23201a] text-gray-300 font-bold text-xs tracking-widest uppercase hover:border-[#d4af37] hover:text-[#d4af37] transition-all"
                     >
                       CO-DEVELOPMENT INQUIRY
