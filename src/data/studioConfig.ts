@@ -22,73 +22,72 @@ export const STUDIO_CONFIG: StudioConfig = {
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
-    id: 'films-series',
-    title: 'FILMS & SERIES',
-    shortDesc: 'Feature Films, Web Series, Short Films, Documentaries, Music Videos and Original Entertainment.',
-    fullDesc: 'We conceptualize, script, direct, and produce full-length feature films, streaming web series, documentaries, and music videos. By combining high-end cinema craft with AI visual pre-visualization and digital worldbuilding, we deliver epic scale and cultural depth.',
+    id: 'ai-film-digital-production',
+    title: 'AI FILM & DIGITAL PRODUCTION',
+    shortDesc: 'Create cinematic films and digital productions using AI-assisted workflows combined with professional filmmaking practices.',
+    fullDesc: 'We produce full-length feature films, streaming web series, documentaries, and digital productions using an advanced pipeline that combines AI technology with professional filmmaking practices. From grand historical sagas to cultural stories, we deliver cinematic scale and narrative depth.',
     subCategories: [
-      'Feature Films Production',
-      'Original Web Series',
-      'Short Films & Anthologies',
-      'Cultural & Historical Documentaries',
-      'Cinematic Music Videos',
+      'Feature Films',
+      'Web Series',
+      'Short Films',
+      'Documentaries',
+      'Historical & Cultural Cinema',
       'Original IP Development'
     ],
     imagePlaceholderId: 'SERVICE_FILM_IMAGE',
-    defaultImageUrl: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200&auto=format&fit=crop',
+    defaultImageUrl: '/src/assets/images/studio_cinematic_1786461148134.jpg',
     iconName: 'Film'
   },
   {
     id: 'ai-creative-production',
     title: 'AI CREATIVE PRODUCTION',
-    shortDesc: 'AI Image & Video Generation, Character Creation, Digital Environments, Animation, AI Voice and AI-assisted Pre-visualization.',
-    fullDesc: 'Harnessing state-of-the-art generative AI models as artistic instruments to design hyper-detailed characters, digital set extensions, photorealistic concept art, dynamic previz animatics, and AI-assisted dubbing.',
+    shortDesc: 'AI-assisted creative development for cinematic storytelling, visual development, and digital production.',
+    fullDesc: 'AI-assisted creative production for developing cinematic visual content from concept to production. We empower storytellers, artists, and directors—accelerating concept exploration, character visualization, and visual development while keeping human imagination and emotion at the core.',
     subCategories: [
-      'AI Image & Video Generation',
-      'AI Character Development & Digital Humans',
-      'Digital Environments & Worldbuilding',
-      'AI Animation & Motion Capture Synthesis',
-      'AI Voice, Dubbing & Multi-language Translation',
-      'AI Pre-visualization & Animatics'
+      'AI Image Generation',
+      'AI Video Generation',
+      'AI Character Creation',
+      'AI Voice & Music',
+      'AI Pre-visualization',
+      'Cinematic Concept Development'
     ],
     imagePlaceholderId: 'SERVICE_AI_IMAGE',
-    defaultImageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop',
+    defaultImageUrl: '/src/assets/images/jogidas_white_attire_poster_1786546636449.jpg',
     iconName: 'Cpu'
   },
   {
-    id: 'vfx-post-production',
-    title: 'VFX & POST PRODUCTION',
-    shortDesc: 'CGI, VFX, Compositing, Environment Creation, Motion Graphics, Editing, Color Grading and Sound Design.',
-    fullDesc: 'A complete end-to-end post-production workflow designed for modern film standard finishing. From complex CGI shots and 3D environment compositing to cinematic color grading and immersive Dolby Atmos soundscapes.',
+    id: 'ai-vfx-services',
+    title: 'AI & VFX SERVICES',
+    shortDesc: 'Advanced AI and VFX solutions for filmmakers, production houses, brands, museums, and historical content creators.',
+    fullDesc: 'Advanced AI and VFX solutions for filmmakers, production houses, brands, museums, and historical content creators. Combining AI-assisted generation with 3D modeling, digital environment creation, and professional visual effects compositing for modern and period productions.',
     subCategories: [
-      'CGI & Visual Effects (VFX)',
-      'Digital Compositing & Matte Painting',
-      '3D Environment Creation & Set Extensions',
-      'Motion Graphics & Title Design',
-      'Cinematic Film Editing',
-      'Color Grading & Finishing',
-      'Sound Design & Audio Mastering'
+      'AI Key Art & Posters',
+      'AI Storyboarding',
+      '3D Modeling & Assets',
+      'VFX & Compositing',
+      'Digital Environment Creation',
+      'Historical Reconstruction'
     ],
     imagePlaceholderId: 'SERVICE_VFX_IMAGE',
-    defaultImageUrl: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=1200&auto=format&fit=crop',
+    defaultImageUrl: '/src/assets/images/jogidas_poster_official_1786541347811.jpg',
     iconName: 'Sparkles'
   },
   {
-    id: 'commercial-content',
-    title: 'COMMERCIAL CONTENT',
-    shortDesc: 'Advertisements, Brand Films, Promotional Videos, Corporate Content, Social Media Content and Digital Campaigns.',
-    fullDesc: 'Translating cinematic storytelling and high-impact AI visual production into high-converting brand commercials, corporate identity films, launch videos, and viral digital media campaigns.',
+    id: 'historical-digital-production',
+    title: 'HISTORICAL DIGITAL PRODUCTION',
+    shortDesc: 'Specialized digital production for bringing historical environments, locations, architecture, and cultural worlds to life through research, AI, and cinematic VFX.',
+    fullDesc: 'Specialized digital production for bringing historical environments, locations, architecture, and cultural worlds to life through research, AI, and cinematic VFX. We recreate monumental fortresses, ancient cities, and large-scale battlegrounds with cinematic authenticity.',
     subCategories: [
-      'Television & Digital Advertisements',
-      'Cinematic Brand Storytelling Films',
-      'Corporate & Institutional Content',
-      'Product Launch & Promotional Videos',
-      'Social Media Campaign Visuals',
-      'High-Impact Digital Campaigns'
+      'Historical Environment Creation',
+      'Fort & Ancient City Recreation',
+      'Historical Location Recreation',
+      'Battlefields & Digital Environments',
+      'Period Worldbuilding',
+      'Heritage & Cultural Visualization'
     ],
-    imagePlaceholderId: 'SERVICE_COMMERCIAL_IMAGE',
-    defaultImageUrl: 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1200&auto=format&fit=crop',
-    iconName: 'Tv'
+    imagePlaceholderId: 'SERVICE_HISTORICAL_IMAGE',
+    defaultImageUrl: '/src/assets/images/hero_cinematic_bg_1786461121840.jpg',
+    iconName: 'Landmark'
   }
 ];
 

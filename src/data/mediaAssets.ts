@@ -80,26 +80,34 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
   },
   SERVICE_FILM_IMAGE: {
     id: 'SERVICE_FILM_IMAGE',
-    label: 'Films & Series Service Visual',
-    replacementPath: '/assets/service-images/films-series.jpg',
-    currentUrl: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200&auto=format&fit=crop',
-    description: 'Cinematic camera rig on set',
+    label: 'AI Film & Digital Production Visual',
+    replacementPath: '/src/assets/images/studio_cinematic_1786461148134.jpg',
+    currentUrl: '/src/assets/images/studio_cinematic_1786461148134.jpg',
+    description: 'Cinematic film camera and studio production setup',
     type: 'image'
   },
   SERVICE_AI_IMAGE: {
     id: 'SERVICE_AI_IMAGE',
     label: 'AI Creative Production Visual',
-    replacementPath: '/assets/service-images/ai-creative.jpg',
-    currentUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop',
-    description: 'Abstract digital AI visual pre-visualization rendering',
+    replacementPath: '/src/assets/images/jogidas_white_attire_poster_1786546636449.jpg',
+    currentUrl: '/src/assets/images/jogidas_white_attire_poster_1786546636449.jpg',
+    description: 'AI visual concept development and character visualization',
     type: 'image'
   },
   SERVICE_VFX_IMAGE: {
     id: 'SERVICE_VFX_IMAGE',
-    label: 'VFX & Post Production Visual',
-    replacementPath: '/assets/service-images/vfx-post.jpg',
-    currentUrl: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=1200&auto=format&fit=crop',
-    description: 'Color grading timeline and VFX editing suite',
+    label: 'AI & VFX Services Visual',
+    replacementPath: '/src/assets/images/jogidas_poster_official_1786541347811.jpg',
+    currentUrl: '/src/assets/images/jogidas_poster_official_1786541347811.jpg',
+    description: 'Official key art, digital compositing, and visual effects',
+    type: 'image'
+  },
+  SERVICE_HISTORICAL_IMAGE: {
+    id: 'SERVICE_HISTORICAL_IMAGE',
+    label: 'Historical Digital Production Visual',
+    replacementPath: '/src/assets/images/hero_cinematic_bg_1786461121840.jpg',
+    currentUrl: '/src/assets/images/hero_cinematic_bg_1786461121840.jpg',
+    description: 'Historical fort and digital environment recreation',
     type: 'image'
   },
   SERVICE_COMMERCIAL_IMAGE: {
