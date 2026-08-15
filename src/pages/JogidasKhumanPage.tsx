@@ -76,9 +76,6 @@ export const JogidasKhumanPage: React.FC<JogidasKhumanPageProps> = ({ onNavigate
               referrerPolicy="no-referrer"
               className="w-full h-auto max-h-[600px] object-contain rounded-xl border border-[#d4af37]/30 shadow-2xl"
             />
-            <div className="absolute bottom-3 left-3 bg-black/80 px-3 py-1 rounded border border-[#d4af37]/30 text-[10px] text-[#d4af37] font-mono">
-              FILM_PROJECT_IMAGE_PLACEHOLDER
-            </div>
           </div>
 
           <div className="lg:col-span-5 space-y-6">
@@ -150,7 +147,7 @@ export const JogidasKhumanPage: React.FC<JogidasKhumanPageProps> = ({ onNavigate
               VISUAL WORLD & AI PRODUCTION
             </h3>
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
-              Recreating 19th-century Kathiawar requires dense historical accuracy—from traditional attire, swords, and horse tack to authentic stone forts of Sorath. Garvi Gujarat AI Studio deploys custom AI visual models trained on architectural archives to deliver unmatched photorealism.
+              Garvi Gujarat AI Studio combines historical research, AI-assisted visual development, VFX, and digital environment creation to build the cinematic world of Jogidas Khuman.
             </p>
           </div>
 
@@ -172,7 +169,7 @@ export const JogidasKhumanPage: React.FC<JogidasKhumanPageProps> = ({ onNavigate
             WANT TO BE A PART OF JOGIDAS KHUMAN?
           </h3>
           <p className="text-xs sm:text-sm text-gray-300">
-            Inquire for casting, co-production, theatrical distribution, or commercial sponsorship.
+            Inquire for casting, creative collaboration, co-production, distribution, or licensing.
           </p>
           <button
             onClick={() => onNavigate('contact')}

@@ -101,7 +101,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     status: 'Teaser Released',
     tagline: 'A legendary story from the land of Saurashtra. Honor. Rebellion. Sacrifice.',
     description: 'A legendary story from the land of Saurashtra. A story of honour, rebellion, sacrifice and the struggle of a man who became a legend. Jogidas Khuman marks the beginning of our ambitious historical storytelling universe — bringing the legendary Baharvatiya stories of Sorath to a new generation through cinematic AI-powered filmmaking.',
-    longDescription: 'Set against the rugged, majestic terrains of 19th-century Sorath (Saurashtra), Jogidas Khuman tells the epic saga of a warrior who stood against tyranny with unyielding honor. Driven out of his ancestral land, Jogidas chose the righteous path of Baharvatiya — outlawry governed by chivalry, courage, and protective devotion to the helpless. Through state-of-the-art AI-assisted worldbuilding and authentic historical research, Garvi Gujarat AI Studio breathes monumental visual scale into this cherished folk hero of Gujarat.',
+    longDescription: 'Set against the rugged, majestic terrains of 19th-century Sorath (Saurashtra), Jogidas Khuman tells the epic saga of a warrior who stood against tyranny with unyielding honor. Driven out of his ancestral land, Jogidas chose the righteous path of Baharvatiya — outlawry governed by chivalry, courage, and protective devotion to the helpless. Through AI-assisted visual development and cinematic worldbuilding and authentic historical research, Garvi Gujarat AI Studio breathes monumental visual scale into this cherished folk hero of Gujarat.',
     posterPlaceholderId: 'FILM_PROJECT_IMAGE_PLACEHOLDER',
     defaultPosterUrl: '/src/assets/images/jogidas.png',
     trailerPlaceholderId: 'FILM_TRAILER_PLACEHOLDER',
@@ -109,7 +109,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     historicalContext: 'Sorath (Saurashtra) was a land of independent chieftains, royal dynasties, and fierce honor codes. The Baharvatiya tradition was not banditry, but a noble armed resistance against unjust tax regimes and oppressive rulers, guided by sacred ethical principles.',
     characters: [
       { name: 'Jogidas Khuman', role: 'The Hero of Sorath', desc: 'A fierce Baharvatiya leader revered for his unbending principles, bravery, and defense of the oppressed.' },
-      { name: 'Hada Khuman', role: 'Patriarch & Chieftain', desc: 'The wise elder chieftain of the Khuman clan whose ancestral land rights sparked the legendary struggle.' },
+      { name: 'Hada Khuman', role: 'Patriarch & Chieftain', desc: 'An elder of the Khuman family whose presence shapes the emotional and historical world of the story.' },
       { name: 'The Ruler of Bhavnagar', role: 'Royal Opponent', desc: 'A powerful ruler locked in an intense tactical and moral feud with the honorable outlaw.' }
     ],
     isFeatured: true
