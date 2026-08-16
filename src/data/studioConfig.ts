@@ -8,8 +8,8 @@ export const STUDIO_CONFIG: StudioConfig = {
   founderTitle: 'Founder & Producer',
   founderBioPlaceholder: 'FOUNDER_BIO_PLACEHOLDER',
   founderBioText: 'Jayraj Solanki is an ambitious film producer and visionary creative director pioneering the fusion of authentic Indian heritage storytelling with cutting-edge AI technologies and cinematic visual craftsmanship.',
-  emailPlaceholder: 'EMAIL_PLACEHOLDER',
-  phonePlaceholder: 'PHONE_PLACEHOLDER',
+  emailPlaceholder: 'studioggai5@gmail.com',
+  phonePlaceholder: '+91 9409682540',
   whatsappPlaceholder: 'WHATSAPP_PLACEHOLDER',
   socialLinksPlaceholder: 'SOCIAL_LINKS_PLACEHOLDER',
   socials: {

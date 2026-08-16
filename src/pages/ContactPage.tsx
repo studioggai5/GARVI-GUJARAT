@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PageId, ContactInquiryForm } from '../types';
 import { STUDIO_CONFIG } from '../data/studioConfig';
-import { Mail, Phone, MessageSquare, Send, CheckCircle2, Copy, Check, Building2, User } from 'lucide-react';
+import { Mail, Phone, Send, CheckCircle2, Copy, Check } from 'lucide-react';
 
 interface ContactPageProps {
   onNavigate: (page: PageId) => void;
@@ -29,10 +29,42 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      alert('Please fill out all required fields (Name, Email, Message).');
+
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.inquiryType ||
+      !formData.message
+    ) {
+      alert('Please fill out all required fields.');
       return;
     }
+
+    const subject = `Garvi Gujarat AI Studios — ${formData.inquiryType}`;
+
+    const body = `
+Name: ${formData.name}
+
+Email: ${formData.email}
+
+Phone: ${formData.phone || 'Not provided'}
+
+Company / Organization: ${formData.company || 'Not provided'}
+
+Inquiry Type: ${formData.inquiryType}
+
+Message:
+
+${formData.message}
+`;
+
+    const mailtoUrl =
+      `mailto:studioggai5@gmail.com` +
+      `?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+
     setIsSubmitted(true);
   };
 
@@ -50,7 +82,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           CONNECT WITH US
         </span>
         <h1 className="font-cinzel text-3xl sm:text-5xl font-extrabold text-white tracking-wider">
-          LET'S TALK
+          LET&apos;S TALK
         </h1>
         <p className="text-xs sm:text-base text-gray-400 max-w-2xl mx-auto">
           For film, production, acting, investment, licensing, commercial projects or creative collaborations, get in touch with Garvi Gujarat AI Studio.
@@ -60,7 +92,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
       {/* Main Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Studio Contact Information & Placeholders */}
+          {/* Studio Contact Information */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-[#0e0f14] border border-[#23201a] rounded-2xl p-8 space-y-6">
               <div className="space-y-1 border-b border-[#1f2029] pb-4">
@@ -76,52 +108,47 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
               </div>
 
               <div className="space-y-4 text-xs">
-                {/* Email Placeholder Block */}
+                {/* Email Address Block */}
                 <div className="p-4 rounded-xl bg-[#14151d] border border-[#23201a] flex items-center justify-between">
                   <div className="space-y-1">
                     <span className="text-[10px] text-gray-400 font-mono block">EMAIL ADDRESS</span>
-                    <code className="text-[#d4af37] font-mono text-sm block">{STUDIO_CONFIG.emailPlaceholder}</code>
+                    <a
+                      href={`mailto:${STUDIO_CONFIG.emailPlaceholder}`}
+                      className="text-[#d4af37] hover:underline font-mono text-sm block"
+                    >
+                      {STUDIO_CONFIG.emailPlaceholder}
+                    </a>
                   </div>
                   <button
                     onClick={() => copyToClipboard(STUDIO_CONFIG.emailPlaceholder, 'email')}
                     className="p-2 rounded bg-[#1c1e29] text-gray-300 hover:text-white"
-                    title="Copy Placeholder"
+                    title="COPY EMAIL"
                   >
                     {copiedField === 'email' ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
                   </button>
                 </div>
 
-                {/* Phone Placeholder Block */}
+                {/* Phone Number Block */}
                 <div className="p-4 rounded-xl bg-[#14151d] border border-[#23201a] flex items-center justify-between">
                   <div className="space-y-1">
                     <span className="text-[10px] text-gray-400 font-mono block">PHONE NUMBER</span>
-                    <code className="text-[#d4af37] font-mono text-sm block">{STUDIO_CONFIG.phonePlaceholder}</code>
+                    <a
+                      href="tel:+919409682540"
+                      className="text-[#d4af37] hover:underline font-mono text-sm block"
+                    >
+                      {STUDIO_CONFIG.phonePlaceholder}
+                    </a>
                   </div>
                   <button
                     onClick={() => copyToClipboard(STUDIO_CONFIG.phonePlaceholder, 'phone')}
                     className="p-2 rounded bg-[#1c1e29] text-gray-300 hover:text-white"
-                    title="Copy Placeholder"
+                    title="COPY PHONE"
                   >
                     {copiedField === 'phone' ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
                   </button>
                 </div>
 
-                {/* WhatsApp Placeholder Block */}
-                <div className="p-4 rounded-xl bg-[#14151d] border border-[#23201a] flex items-center justify-between">
-                  <div className="space-y-1">
-                    <span className="text-[10px] text-gray-400 font-mono block">WHATSAPP CHANNEL</span>
-                    <code className="text-[#d4af37] font-mono text-sm block">{STUDIO_CONFIG.whatsappPlaceholder}</code>
-                  </div>
-                  <button
-                    onClick={() => copyToClipboard(STUDIO_CONFIG.whatsappPlaceholder, 'whatsapp')}
-                    className="p-2 rounded bg-[#1c1e29] text-gray-300 hover:text-white"
-                    title="Copy Placeholder"
-                  >
-                    {copiedField === 'whatsapp' ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
-                  </button>
-                </div>
-
-                {/* Social Links Placeholder */}
+                {/* Social Links */}
                 <div className="p-4 rounded-xl bg-[#14151d] border border-[#23201a] space-y-2">
                   <span className="text-[10px] text-gray-400 font-mono block">SOCIAL CHANNELS</span>
                   <p className="text-xs text-gray-300">
@@ -144,10 +171,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="font-cinzel font-bold text-2xl text-white">
-                    INQUIRY TRANSMITTED SUCCESSFULLY
+                    EMAIL DRAFT READY
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-300 max-w-md mx-auto leading-relaxed">
-                    Thank you, <strong className="text-white">{formData.name}</strong>. Your inquiry for <strong className="text-[#d4af37]">{formData.inquiryType}</strong> has been logged. Producer Jayraj Solanki & our studio development team will get in touch with you shortly.
+                    Please review the prepared email and send it from your email application.
                   </p>
                   <button
                     onClick={() => {
