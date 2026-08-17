@@ -124,7 +124,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     tagline: 'Historical cinematic project in development.',
     description: 'An upcoming historical cinematic project from the Garvi Gujarat cinematic universe, currently in active development.',
     posterPlaceholderId: 'PROJECT_KADU_MAKRANI_PLACEHOLDER',
-    defaultPosterUrl: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=800&auto=format&fit=crop',
+    defaultPosterUrl: '/Kadu_Makrani_.jpeg',
     trailerPlaceholderId: 'FILM_TRAILER_PLACEHOLDER',
     isFeatured: false
   },
@@ -138,7 +138,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     tagline: 'Historical cinematic project in development.',
     description: 'An upcoming historical cinematic project exploring Gujarat and Saurashtra folklore and heritage, currently in active development.',
     posterPlaceholderId: 'PROJECT_KHAPRO_KHODIYO_PLACEHOLDER',
-    defaultPosterUrl: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop',
+    defaultPosterUrl: '/khapro-khodiyo.jpg.png',
     trailerPlaceholderId: 'FILM_TRAILER_PLACEHOLDER',
     isFeatured: false
   },
@@ -152,21 +152,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     tagline: 'Historical cinematic project in development.',
     description: 'An upcoming historical cinematic project inspired by the legendary historical lore of Saurashtra, currently in active development.',
     posterPlaceholderId: 'PROJECT_RAM_VALO_PLACEHOLDER',
-    defaultPosterUrl: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=800&auto=format&fit=crop',
-    trailerPlaceholderId: 'FILM_TRAILER_PLACEHOLDER',
-    isFeatured: false
-  },
-  {
-    id: 'jodha-manek',
-    title: 'JODHA MANEK',
-    universe: 'HISTORICAL SLATE',
-    subtitle: 'HISTORICAL CINEMATIC PROJECT',
-    genre: 'Historical / Rebellion Saga',
-    status: 'In Development',
-    tagline: 'Historical cinematic project in development.',
-    description: 'An upcoming historical cinematic project based on the heroic resistance and folklore of Saurashtra, currently in active development.',
-    posterPlaceholderId: 'PROJECT_JODHA_MANEK_PLACEHOLDER',
-    defaultPosterUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
+    defaultPosterUrl: '/ram-valo.jpg.png',
     trailerPlaceholderId: 'FILM_TRAILER_PLACEHOLDER',
     isFeatured: false
   }

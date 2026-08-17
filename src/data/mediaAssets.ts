@@ -66,7 +66,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'VISION_BACKGROUND_PLACEHOLDER',
     label: 'Our Vision Background Visual',
     replacementPath: '/assets/studio-images/vision-bg.jpg',
-    currentUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1920&auto=format&fit=crop',
+    currentUrl: '/vision-background.jpg.jpeg',
     description: 'Slow moody cinematic atmosphere background',
     type: 'image'
   },
@@ -122,7 +122,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'PROJECT_KADU_MAKRANI_PLACEHOLDER',
     label: 'Kadu Makrani Project Visual',
     replacementPath: '/assets/projects/kadu-makrani.jpg',
-    currentUrl: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=800&auto=format&fit=crop',
+    currentUrl: '/Kadu_Makrani_.jpeg',
     description: 'Kadu Makrani historical project visual',
     type: 'image'
   },
@@ -130,7 +130,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'PROJECT_KHAPRO_KHODIYO_PLACEHOLDER',
     label: 'Khapro Khodiyo Project Visual',
     replacementPath: '/assets/projects/khapro-khodiyo.jpg',
-    currentUrl: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop',
+    currentUrl: '/khapro-khodiyo.jpg.png',
     description: 'Khapro Khodiyo historical project visual',
     type: 'image'
   },
@@ -138,7 +138,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'PROJECT_RAM_VALO_PLACEHOLDER',
     label: 'Ram Valo Project Visual',
     replacementPath: '/assets/projects/ram-valo.jpg',
-    currentUrl: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=800&auto=format&fit=crop',
+    currentUrl: '/ram-valo.jpg.png',
     description: 'Ram Valo historical project visual',
     type: 'image'
   },

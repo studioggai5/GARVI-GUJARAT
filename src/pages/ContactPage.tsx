@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { PageId, ContactInquiryForm } from '../types';
 import { STUDIO_CONFIG } from '../data/studioConfig';
-import { Mail, Phone, Send, CheckCircle2, Copy, Check } from 'lucide-react';
+import { supabase } from '../lib/supabase';
+import { Mail, Phone, Send, CheckCircle2, Copy, Check, Loader2, AlertCircle } from 'lucide-react';
 
 interface ContactPageProps {
   onNavigate: (page: PageId) => void;
@@ -17,55 +18,66 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    if (errorMessage) setErrorMessage(null);
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.inquiryType ||
-      !formData.message
-    ) {
-      alert('Please fill out all required fields.');
+    const trimmedName = formData.name.trim();
+    const trimmedEmail = formData.email.trim();
+    const trimmedMessage = formData.message.trim();
+
+    if (!trimmedName || !trimmedEmail || !trimmedMessage) {
+      setErrorMessage('Please fill out all required fields.');
       return;
     }
 
-    const subject = `Garvi Gujarat AI Studios — ${formData.inquiryType}`;
+    setIsSubmitting(true);
+    setErrorMessage(null);
 
-    const body = `
-Name: ${formData.name}
+    try {
+      const { error } = await supabase.from('contact_messages').insert([
+        {
+          name: trimmedName,
+          email: trimmedEmail,
+          phone: formData.phone?.trim() || null,
+          company: formData.company?.trim() || null,
+          subject: formData.inquiryType || 'General Inquiry',
+          message: trimmedMessage
+        }
+      ]);
 
-Email: ${formData.email}
+      if (error) {
+        setErrorMessage("We couldn't send your message right now. Please try again.");
+        setIsSubmitting(false);
+        return;
+      }
 
-Phone: ${formData.phone || 'Not provided'}
-
-Company / Organization: ${formData.company || 'Not provided'}
-
-Inquiry Type: ${formData.inquiryType}
-
-Message:
-
-${formData.message}
-`;
-
-    const mailtoUrl =
-      `mailto:studioggai5@gmail.com` +
-      `?subject=${encodeURIComponent(subject)}` +
-      `&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailtoUrl;
-
-    setIsSubmitted(true);
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        inquiryType: 'Film / Series',
+        message: ''
+      });
+    } catch {
+      setErrorMessage("We couldn't send your message right now. Please try again.");
+      setIsSubmitting(false);
+    }
   };
 
   const copyToClipboard = (text: string, label: string) => {
@@ -171,14 +183,15 @@ ${formData.message}
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="font-cinzel font-bold text-2xl text-white">
-                    EMAIL DRAFT READY
+                    MESSAGE RECEIVED
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-300 max-w-md mx-auto leading-relaxed">
-                    Please review the prepared email and send it from your email application.
+                    Thank you for contacting Garvi Gujarat AI Studio. Your message has been received. Our team will get back to you soon.
                   </p>
                   <button
                     onClick={() => {
                       setIsSubmitted(false);
+                      setErrorMessage(null);
                       setFormData({
                         name: '',
                         email: '',
@@ -188,7 +201,7 @@ ${formData.message}
                         message: ''
                       });
                     }}
-                    className="mt-4 px-6 py-2.5 rounded bg-[#1c1d27] text-[#d4af37] border border-[#d4af37]/40 font-bold text-xs uppercase"
+                    className="mt-4 px-6 py-2.5 rounded bg-[#1c1d27] text-[#d4af37] border border-[#d4af37]/40 font-bold text-xs uppercase hover:bg-[#d4af37] hover:text-black transition-all"
                   >
                     SEND ANOTHER INQUIRY
                   </button>
@@ -203,6 +216,13 @@ ${formData.message}
                       Fill out the form below to initiate communication with Garvi Gujarat AI Studio.
                     </p>
                   </div>
+
+                  {errorMessage && (
+                    <div className="p-3.5 rounded-lg bg-red-950/50 border border-red-500/50 text-red-200 text-xs flex items-center space-x-2">
+                      <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
@@ -303,10 +323,20 @@ ${formData.message}
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-md bg-gradient-to-r from-[#d4af37] via-[#fce080] to-[#b8860b] text-black font-extrabold text-xs tracking-widest uppercase hover:brightness-110 transition-all flex items-center justify-center space-x-2 shadow-xl"
+                    disabled={isSubmitting}
+                    className="w-full py-4 rounded-md bg-gradient-to-r from-[#d4af37] via-[#fce080] to-[#b8860b] text-black font-extrabold text-xs tracking-widest uppercase hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed transition-all flex items-center justify-center space-x-2 shadow-xl"
                   >
-                    <span>SEND INQUIRY</span>
-                    <Send className="w-4 h-4" />
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>SENDING INQUIRY...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>SEND INQUIRY</span>
+                        <Send className="w-4 h-4" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}
