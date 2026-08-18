@@ -2,6 +2,7 @@ import React from 'react';
 import { PageId } from '../types';
 import { STUDIO_CONFIG, SERVICES_DATA, PROJECTS_DATA } from '../data/studioConfig';
 import { MEDIA_ASSETS } from '../data/mediaAssets';
+import visionBackground from '../assets/images/vision-background.jpg.jpeg';
 import { Play, ArrowRight, Film, Cpu, Sparkles, Tv, Shield, Users, Mail, Phone, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
 
 interface HomePageProps {
@@ -23,7 +24,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenTrailer })
         {/* Cinematic Hero Background Image with natural golden-hour brightness & clarity */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src="/vision-background.jpg.jpeg"
+            src={visionBackground}
             alt="Garvi Gujarat AI Studio - Cinematic Historical Landscape"
             className="w-full h-full object-cover object-center scale-100 filter brightness-105 contrast-[1.03] saturate-[1.08] transition-transform duration-1000"
           />
