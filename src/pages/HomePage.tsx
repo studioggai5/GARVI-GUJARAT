@@ -23,7 +23,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenTrailer })
         {/* Cinematic Hero Background Image with natural golden-hour brightness & clarity */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src={heroImage.currentUrl}
+            src="/vision-background.jpg.jpeg"
             alt="Garvi Gujarat AI Studio - Cinematic Historical Landscape"
             className="w-full h-full object-cover object-center scale-100 filter brightness-105 contrast-[1.03] saturate-[1.08] transition-transform duration-1000"
           />

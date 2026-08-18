@@ -43,7 +43,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'HERO_IMAGE_PLACEHOLDER',
     label: 'Hero Background Fallback Image',
     replacementPath: '/assets/hero-image.jpg',
-    currentUrl: heroCinematicBg,
+    currentUrl: '/vision-background.jpg.jpeg',
     description: 'High-res cinematic background for hero section',
     type: 'image'
   },
