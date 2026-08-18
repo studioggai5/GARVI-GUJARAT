@@ -1,8 +1,17 @@
 /**
  * GARVI GUJARAT AI STUDIO — MEDIA ASSETS & PLACEHOLDER REGISTRY
  * All images, posters, and video placeholders are centrally registered here.
- * Owners can easily replace file paths or URLs in this file.
+ * Uses Vite-compatible ES module imports for internal assets and public URLs for public assets.
  */
+
+// Import internal assets from src/assets/images
+import studioLogo from '../assets/images/studio_logo_1786540872261.jpg';
+import heroCinematicBg from '../assets/images/hero_cinematic_bg_1786461121840.jpg';
+import studioCinematic from '../assets/images/studio_cinematic_1786461148134.jpg';
+import jogidasPosterOfficial from '../assets/images/jogidas_poster_official_1786541347811.jpg';
+import jogidasWhiteAttirePoster from '../assets/images/jogidas_white_attire_poster_1786546636449.jpg';
+import jogidasKeyVisual from '../assets/images/jogidas.png';
+import jayrajFounderPortrait from '../assets/images/jayraj.png';
 
 export interface MediaAsset {
   id: string;
@@ -18,7 +27,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'STUDIO_LOGO',
     label: 'Garvi Gujarat AI Studios Official Emblem Logo',
     replacementPath: '/assets/studio-logo.jpg',
-    currentUrl: '/src/assets/images/studio_logo_1786540872261.jpg',
+    currentUrl: studioLogo,
     description: 'Official 3D metallic lion & Gujarat map studio logo',
     type: 'image'
   },
@@ -34,7 +43,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'HERO_IMAGE_PLACEHOLDER',
     label: 'Hero Background Fallback Image',
     replacementPath: '/assets/hero-image.jpg',
-    currentUrl: '/src/assets/images/hero_cinematic_bg_1786461121840.jpg',
+    currentUrl: heroCinematicBg,
     description: 'High-res cinematic background for hero section',
     type: 'image'
   },
@@ -42,7 +51,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'ABOUT_STUDIO_IMAGE',
     label: 'About Studio Production Visual',
     replacementPath: '/assets/studio-images/about-studio.jpg',
-    currentUrl: '/src/assets/images/studio_cinematic_1786461148134.jpg',
+    currentUrl: studioCinematic,
     description: 'Cinematic film studio and AI production soundstage image',
     type: 'image'
   },
@@ -50,7 +59,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'FILM_PROJECT_IMAGE_PLACEHOLDER',
     label: 'Jogidas Khuman Key Visual Banner',
     replacementPath: '/assets/jogidas-poster.jpg',
-    currentUrl: '/src/assets/images/jogidas.png',
+    currentUrl: jogidasKeyVisual,
     description: 'Official movie banner visual for Jogidas Khuman film - The Legendary Baharvatiya of Sorath',
     type: 'image'
   },
@@ -74,7 +83,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'FOUNDER_IMAGE_PLACEHOLDER',
     label: 'Jayraj Solanki - Founder & Producer Portrait',
     replacementPath: '/assets/studio-images/jayraj-solanki.jpg',
-    currentUrl: '/src/assets/images/jayraj.png',
+    currentUrl: jayrajFounderPortrait,
     description: 'Producer portrait visual for Jayraj Solanki',
     type: 'image'
   },
@@ -82,7 +91,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'SERVICE_FILM_IMAGE',
     label: 'AI Film & Digital Production Visual',
     replacementPath: '/src/assets/images/studio_cinematic_1786461148134.jpg',
-    currentUrl: '/src/assets/images/studio_cinematic_1786461148134.jpg',
+    currentUrl: studioCinematic,
     description: 'Cinematic film camera and studio production setup',
     type: 'image'
   },
@@ -90,7 +99,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'SERVICE_AI_IMAGE',
     label: 'AI Creative Production Visual',
     replacementPath: '/src/assets/images/jogidas_white_attire_poster_1786546636449.jpg',
-    currentUrl: '/src/assets/images/jogidas_white_attire_poster_1786546636449.jpg',
+    currentUrl: jogidasWhiteAttirePoster,
     description: 'AI visual concept development and character visualization',
     type: 'image'
   },
@@ -98,7 +107,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'SERVICE_VFX_IMAGE',
     label: 'AI & VFX Services Visual',
     replacementPath: '/src/assets/images/jogidas_poster_official_1786541347811.jpg',
-    currentUrl: '/src/assets/images/jogidas_poster_official_1786541347811.jpg',
+    currentUrl: jogidasPosterOfficial,
     description: 'Official key art, digital compositing, and visual effects',
     type: 'image'
   },
@@ -106,7 +115,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'SERVICE_HISTORICAL_IMAGE',
     label: 'Historical Digital Production Visual',
     replacementPath: '/src/assets/images/hero_cinematic_bg_1786461121840.jpg',
-    currentUrl: '/src/assets/images/hero_cinematic_bg_1786461121840.jpg',
+    currentUrl: heroCinematicBg,
     description: 'Historical fort and digital environment recreation',
     type: 'image'
   },

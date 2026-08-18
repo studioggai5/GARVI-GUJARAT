@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenLegal }) => {
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 rounded-lg bg-[#050505] border border-[#d4af37]/40 p-0.5 shadow-[0_0_15px_rgba(212,175,55,0.2)] overflow-hidden flex items-center justify-center shrink-0">
                 <img
-                  src={MEDIA_ASSETS.STUDIO_LOGO?.currentUrl || '/src/assets/images/studio_logo_1786540872261.jpg'}
+                  src={MEDIA_ASSETS.STUDIO_LOGO?.currentUrl}
                   alt="Garvi Gujarat AI Studios Logo"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover rounded-md"

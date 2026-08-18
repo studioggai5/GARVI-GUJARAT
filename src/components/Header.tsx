@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, onOpenT
         >
           <div className="w-11 h-11 rounded-lg bg-[#050505] border border-[#d4af37]/40 p-0.5 shadow-[0_0_15px_rgba(212,175,55,0.2)] group-hover:border-[#d4af37] group-hover:scale-105 transition-all duration-300 overflow-hidden flex items-center justify-center shrink-0">
             <img
-              src={MEDIA_ASSETS.STUDIO_LOGO?.currentUrl || '/src/assets/images/studio_logo_1786540872261.jpg'}
+              src={MEDIA_ASSETS.STUDIO_LOGO?.currentUrl}
               alt="Garvi Gujarat AI Studio Official Logo"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover rounded-md"

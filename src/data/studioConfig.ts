@@ -1,4 +1,5 @@
 import { StudioConfig, ServiceItem, ProjectItem, CollaborationCategory } from '../types';
+import { MEDIA_ASSETS } from './mediaAssets';
 
 export const STUDIO_CONFIG: StudioConfig = {
   brandName: 'GARVI GUJARAT AI STUDIO',
@@ -35,7 +36,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Original IP Development'
     ],
     imagePlaceholderId: 'SERVICE_FILM_IMAGE',
-    defaultImageUrl: '/src/assets/images/studio_cinematic_1786461148134.jpg',
+    defaultImageUrl: MEDIA_ASSETS.SERVICE_FILM_IMAGE.currentUrl,
     iconName: 'Film'
   },
   {
@@ -52,7 +53,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Cinematic Concept Development'
     ],
     imagePlaceholderId: 'SERVICE_AI_IMAGE',
-    defaultImageUrl: '/src/assets/images/jogidas_white_attire_poster_1786546636449.jpg',
+    defaultImageUrl: MEDIA_ASSETS.SERVICE_AI_IMAGE.currentUrl,
     iconName: 'Cpu'
   },
   {
@@ -69,7 +70,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Historical Reconstruction'
     ],
     imagePlaceholderId: 'SERVICE_VFX_IMAGE',
-    defaultImageUrl: '/src/assets/images/jogidas_poster_official_1786541347811.jpg',
+    defaultImageUrl: MEDIA_ASSETS.SERVICE_VFX_IMAGE.currentUrl,
     iconName: 'Sparkles'
   },
   {
@@ -86,7 +87,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Heritage & Cultural Visualization'
     ],
     imagePlaceholderId: 'SERVICE_HISTORICAL_IMAGE',
-    defaultImageUrl: '/src/assets/images/hero_cinematic_bg_1786461121840.jpg',
+    defaultImageUrl: MEDIA_ASSETS.SERVICE_HISTORICAL_IMAGE.currentUrl,
     iconName: 'Landmark'
   }
 ];
@@ -103,7 +104,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description: 'A legendary story from the land of Saurashtra. A story of honour, rebellion, sacrifice and the struggle of a man who became a legend. Jogidas Khuman marks the beginning of our ambitious historical storytelling universe — bringing the legendary Baharvatiya stories of Sorath to a new generation through cinematic AI-powered filmmaking.',
     longDescription: 'Set against the rugged, majestic terrains of 19th-century Sorath (Saurashtra), Jogidas Khuman tells the epic saga of a warrior who stood against tyranny with unyielding honor. Driven out of his ancestral land, Jogidas chose the righteous path of Baharvatiya — outlawry governed by chivalry, courage, and protective devotion to the helpless. Through AI-assisted visual development and cinematic worldbuilding and authentic historical research, Garvi Gujarat AI Studio breathes monumental visual scale into this cherished folk hero of Gujarat.',
     posterPlaceholderId: 'FILM_PROJECT_IMAGE_PLACEHOLDER',
-    defaultPosterUrl: '/src/assets/images/jogidas.png',
+    defaultPosterUrl: MEDIA_ASSETS.FILM_PROJECT_IMAGE_PLACEHOLDER.currentUrl,
     trailerPlaceholderId: 'FILM_TRAILER_PLACEHOLDER',
     defaultTrailerVideoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-smoke-and-sparks-rising-in-the-dark-41584-large.mp4',
     historicalContext: 'Sorath (Saurashtra) was a land of independent chieftains, royal dynasties, and fierce honor codes. The Baharvatiya tradition was not banditry, but a noble armed resistance against unjust tax regimes and oppressive rulers, guided by sacred ethical principles.',
@@ -124,7 +125,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     tagline: 'Historical cinematic project in development.',
     description: 'An upcoming historical cinematic project from the Garvi Gujarat cinematic universe, currently in active development.',
     posterPlaceholderId: 'PROJECT_KADU_MAKRANI_PLACEHOLDER',
-    defaultPosterUrl: '/Kadu_Makrani_.jpeg',
+    defaultPosterUrl: MEDIA_ASSETS.PROJECT_KADU_MAKRANI_PLACEHOLDER.currentUrl,
     trailerPlaceholderId: 'FILM_TRAILER_PLACEHOLDER',
     isFeatured: false
   },
@@ -138,7 +139,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     tagline: 'Historical cinematic project in development.',
     description: 'An upcoming historical cinematic project exploring Gujarat and Saurashtra folklore and heritage, currently in active development.',
     posterPlaceholderId: 'PROJECT_KHAPRO_KHODIYO_PLACEHOLDER',
-    defaultPosterUrl: '/khapro-khodiyo.jpg.png',
+    defaultPosterUrl: MEDIA_ASSETS.PROJECT_KHAPRO_KHODIYO_PLACEHOLDER.currentUrl,
     trailerPlaceholderId: 'FILM_TRAILER_PLACEHOLDER',
     isFeatured: false
   },
@@ -152,7 +153,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     tagline: 'Historical cinematic project in development.',
     description: 'An upcoming historical cinematic project inspired by the legendary historical lore of Saurashtra, currently in active development.',
     posterPlaceholderId: 'PROJECT_RAM_VALO_PLACEHOLDER',
-    defaultPosterUrl: '/ram-valo.jpg.png',
+    defaultPosterUrl: MEDIA_ASSETS.PROJECT_RAM_VALO_PLACEHOLDER.currentUrl,
     trailerPlaceholderId: 'FILM_TRAILER_PLACEHOLDER',
     isFeatured: false
   }
