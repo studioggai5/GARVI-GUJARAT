@@ -2,7 +2,7 @@ import React from 'react';
 import { PageId } from '../types';
 import { STUDIO_CONFIG, SERVICES_DATA, PROJECTS_DATA } from '../data/studioConfig';
 import { MEDIA_ASSETS } from '../data/mediaAssets';
-import visionBackground from '../assets/images/vision-background.jpg.jpeg';
+import visionBackground from '../assets/images/vision-background.jpg';
 import { Play, ArrowRight, Film, Cpu, Sparkles, Tv, Shield, Users, Mail, Phone, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
 
 interface HomePageProps {

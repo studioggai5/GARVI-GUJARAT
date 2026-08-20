@@ -12,7 +12,7 @@ import jogidasPosterOfficial from '../assets/images/jogidas_poster_official_1786
 import jogidasWhiteAttirePoster from '../assets/images/jogidas_white_attire_poster_1786546636449.jpg';
 import jogidasKeyVisual from '../assets/images/jogidas.png';
 import jayrajFounderPortrait from '../assets/images/jayraj.png';
-import visionBackground from '../assets/images/vision-background.jpg.jpeg';
+import visionBackground from '../assets/images/vision-background.jpg';
 
 export interface MediaAsset {
   id: string;
@@ -76,7 +76,7 @@ export const MEDIA_ASSETS: Record<string, MediaAsset> = {
     id: 'VISION_BACKGROUND_PLACEHOLDER',
     label: 'Our Vision Background Visual',
     replacementPath: '/assets/studio-images/vision-bg.jpg',
-    currentUrl: '/vision-background.jpg.jpeg',
+    currentUrl: visionBackground,
     description: 'Slow moody cinematic atmosphere background',
     type: 'image'
   },
